@@ -1,0 +1,72 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Traveling Salesman Problem: A Machine Learning Approach}
+\author{Arishma M \\}
+
+\begin{document}
+
+\maketitle
+
+\section{Objective}
+The objective of this project is to study the learning ability of machine learning models on  biased data. For this, we consider the Hamiltonian problem(Traveling Salesman Problem), which is known to be an NP-complete problem. We will try to consider the case of Hamiltonian graphs where the problem is solvable efficiently and train our machine model architectures on such graphs. Towards this, we first try the problem on Halin graphs, where the Hamiltonian problem is solvable very efficiently ( in polynomial time). More precisely, we train the machine the artificially generated instances of Halin graphs and then bias the data by including other graphs closely related to Halin graphs (may be some superclass or subclass of Halin graphs or some classes of planar graphs) where the Hamiltonian problem is solvable efficiently. 
+
+\section{Problem Statement}
+The possibilities of planar graphs to solve the TSP are important areas of research, and the ability to accurately solve the TSP is crucial. Traditional methods can be time-consuming and less accurate, while the use of machine learning techniques can streamline the process and improve the precision of predictions. However, relying solely on real-world data for training these models can result in biases and limitations that negatively impact the accuracy of the predictions.
+
+\section{Introduction}
+    A Halin graph, $H=T\cup C$, is obtained by embedding a tree $T$ (having no nodes of degree 2) in the plane and then adding a cycle $C$ to join the leaves of $T$ in such a way that the resulting graph is planar.\\
+
+It is already known that in  Halin graphs,  the Traveling Salesman Problem ( or equivalently the Hamiltonian problem) is solvable very efficiently. This study intends to generate  a model and train the model with Halin graph  data to solve the TSP.
+The Performance of the model  is evaluated by including the data with other classes of graphs closely related to Halin graphs. 
+such as  some superclass or subclass of Halin graphs or some classes of planar graphs, where the Hamiltonian problem is solvable efficiently. 
+
+
+
+\section{Methodology}
+\subsection{Synthetic Data Generation}
+\subsubsection{Halin Graph Data Generation}
+The Barabási-Albert (BA) algorithm is used to generate the Halin graph data. The BA model is a generative algorithm that starts with a small seed graph and adds new nodes one at a time, with each new node connecting preferentially to nodes that already have high degrees.
+
+\subsubsection{ Data Generation Of Classes Of  Graphs Closely Related To Halin graphs  }
+Using suitable algorithms generates classes of graphs closely related to Halin graphs where the Hamiltonian problem is efficiently solvable. %the maximal planar graph data. It is a linear time algorithm for constructing a maximal planar graph from a given set of vertices and edges.
+\subsection{Supervised Data}
+The Christofides Algorithm is employed to find the Hamiltonian cycles on Halin graphs. This algorithm generates Hamiltonian cycles from the Halin graphs, which are then used as labeled data in the training process. The input to the machine learning model is represented by the Halin graphs, and the output is the Hamiltonian cycles of the graphs.
+\subsection{Training and Testing}
+A Graph Neural Network (GNN) can be used to solve the Traveling Salesman Problem or Hamiltonian problem on Halin graphs. In a GNN, the nodes in the graph are treated as units and their connections are treated as relationships. The network is trained to make predictions on the relationships between the nodes in the graph.
+
+To solve the TSP on Halin graphs using a GNN, the graph structure of the Halin graph can be encoded as node features and edge features, and the GNN can then be trained to predict the next step in the solution. The GNN would learn to identify the optimal path through the graph based on the graph structure and the relationships between the nodes.\\
+ A common approach for a Graph Neural Network (GNN) solving the Traveling Salesman Problem (TSP) on Halin graphs are:\\
+ \begin{enumerate}
+    
+ 
+ \item Encoding the Halin graph: The graph structure can be represented as node features and edge features. 
+
+\item Defining the GNN architecture: The GNN architecture can be designed as a message-passing network, where the information about the graph structure is passed from node to node in the form of node representations. The GNN can also include fully connected layers for making predictions.
+
+\item Training the GNN: The GNN can be trained using supervised learning, where the model is trained on a set of labeled examples of TSP solutions. The input to the model is the representation of the Halin graph and the output is the optimal solution to the TSP. During training, the model's prediction is compared to the labeled solution and the model is updated based on the error between the prediction and the labeled solution.
+
+\item Making predictions on new Halin graphs: After the model is trained, it can be used to make predictions on new, unseen  graph by encoding the graph structure and passing the information through the GNN to find the optimal solution to the TSP(Hamiltonian Problem).
+\end{enumerate}
+\section{Timeline}
+\begin{enumerate}
+\item Month 1-2: Preliminary Study
+Conduct a literature review and studies on the Hamiltonian problem and TSP and related topics, including the Halin graph and the Christofides algorithm. Familiarize with the relevant algorithms and methods and developing codes of the algorithms.
+
+\item Month 3-5: Synthetic Data Generation
+Use the Barabási-Albert (BA) algorithm to generate the Halin graph data. Develop the methods and algorithms to generate classes of graphs, closely related to Halin graphs ( some sub-classes or superclasses or other subclasses of planar graphs where the Hamiltonian problem is solvable efficiently. 
+%Use the Boyer-Myrvold Algorithm to generate the maximal planar graph data.
+
+\item Month 6-7: Training and Testing
+Train the Halin graphs using the Christofides Algorithm.
+Evaluate the performance of the algorithm using the graphs related to Halin graphs.
+\item Month 8: Report writing and related matters 
+
+\end{enumerate}
+%\section{Conclusion}
+%The results of this project could be used to improve the efficiency of TSP(Hamiltonian Problem) solving methods for Halin graphs, and could also provide insights into the use of machine learning techniques for solving complex problems in graph theory. \\
+%Overall, this project aims to make a contribution to the field of TSP and graph theory by developing a machine learning model that can solve the TSP on Halin graphs with improved accuracy and efficiency.\\
+
+\end{document}
